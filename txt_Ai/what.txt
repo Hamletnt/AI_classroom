@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <title>Project AI</title>
+  </head>
+  <body>
+    <div class="what-cheese">
+      <div class="div">
+        <div class="overlap">
+          <div class="text-wrapper">THIEN CHAROEN CHEESE</div>
+          <div class="overlap-group">
+            <div class="rectangle"></div>
+            <div class="text-wrapper-2">What cheese</div>
+          </div>
+          <img class="cheese-photoroom" src="img/cheese-photoroom.png" />
+          <div class="text-wrapper-3">Home</div>
+          <div class="text-wrapper-4">Want cheese</div>
+        </div>
+        <div class="rectangle-2"></div>
+        <div class="select">
+          <div class="img">
+            <img class="gallery" src="img/gallery.png" />
+            <div class="upload-image-wrapper"><div class="upload-image">Uploadimage</div></div>
+          </div>
+          <div class="overlap-2">
+            <div class="search-button"></div>
+            <div class="text-wrapper-5">Search</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
