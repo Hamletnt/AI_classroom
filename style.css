@@ -1,0 +1,703 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+
+.home {
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.home .div {
+  background-color: #ffeac5;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.home .overlap {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  top: 200px;
+  left: 200px;
+  border-radius: 86px;
+}
+
+.home .overlap-group {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  top: 200px;
+  right: 200px;
+  border-radius: 86px;
+  background-color: #7c3620;
+}
+
+.home .div-2 {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  top: 0;
+  left: 0;
+  background-color: #cb6040;
+  border-radius: 86px;
+  box-shadow: 10px 10px 4px #00000040;
+}
+
+.home .text-wrapper {
+  position: absolute;
+  height: 22px;
+  top: 383px;
+  left: 116px;
+  font-family: 'Irish Grover', Helvetica, sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 64px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.home .wishlist {
+  position: absolute;
+  width: 250px;
+  height: 331px;
+  top: 20px;
+  left: 164px;
+  object-fit: cover;
+}
+
+.home .text-wrapper-2 {
+  position: absolute;
+  height: 22px;
+  top: 383px;
+  left: 144px;
+  font-family: 'Irish Grover', Helvetica, sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 64px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.home .think-question {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: 72px;
+  left: 202px;
+  object-fit: cover;
+}
+
+.home .rectangle {
+  position: absolute;
+  width: 1440px;
+  height: 71px;
+  top: 953px;
+  left: 0;
+  background-color: #fcfaee;
+}
+
+.home .overlap-group-2 {
+  position: absolute;
+  width: 100%;
+  height: 160px;
+  top: 0;
+  left: 0;
+  background-color: #ffd993;
+}
+
+.home .cheese-photoroom {
+  position: absolute;
+  width: 150px;
+  height: 113px;
+  top: 23px;
+  left: 23px;
+  object-fit: cover;
+}
+
+.home .text-wrapper-3 {
+  position: absolute;
+  width: 288px;
+  height: 39px;
+  top: 60px;
+  left: 173px;
+  font-family: 'Irish Grover', Helvetica, sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 33px;
+  white-space: nowrap;
+}
+
+
+/* want cheese */
+.want-cheese {
+  background-color: #ffeac5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.want-cheese .div {
+  background-color: #ffeac5;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.want-cheese .select {
+  position: absolute;
+  width: 95vw;
+  height: 70vh;
+  top: 20vh;
+  left: 2vw;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.want-cheese .frame {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  top: 5vh;
+  left: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.want-cheese .overlap-group {
+  position: relative;
+  width: 100vw;
+  height: 210%;
+  /* background-image: url(./img/rectangle-2.svg); */
+  background-size: 100% 100%;
+  background-color: #CB6040;
+}
+
+.want-cheese .rectangle {
+  position: absolute;
+  width: 435px;
+  height: 241px;
+  top: 1414px;
+  left: 31px;
+  background-color: #d3c0a63b;
+}
+
+.want-cheese .rectangle-2 {
+  top: 1139px;
+  left: 31px;
+  position: absolute;
+  width: 435px;
+  height: 241px;
+  background-color: #d3c0a63b;
+}
+
+.want-cheese .rectangle-3 {
+  top: 864px;
+  left: 32px;
+  position: absolute;
+  width: 435px;
+  height: 241px;
+  background-color: #d3c0a63b;
+}
+
+.want-cheese .rectangle-4 {
+  position: absolute;
+  width: 435px;
+  height: 241px;
+  top: 580px;
+  left: 32px;
+  background-color: #d3c0a63b;
+}
+
+.want-cheese .rectangle-5 {
+  top: 305px;
+  left: 31px;
+  position: absolute;
+  width: 435px;
+  height: 241px;
+  background-color: #d3c0a63b;
+}
+
+.want-cheese .rectangle-6 {
+  position: absolute;
+  width: 435px;
+  height: 241px;
+  top: 30px;
+  left: 31px;
+  background-color: #d3c0a63b;
+}
+
+.want-cheese .rectangle-7 {
+  position: absolute;
+  width: 1442px;
+  height: 71px;
+  top: 953px;
+  left: -2px;
+  background-color: #fcfaee;
+}
+
+.want-cheese .overlap {
+  position: absolute;
+  width: 100%;
+  height: 160px;
+  top: 0;
+  left: 0;
+}
+
+.want-cheese .cheese-photoroom {
+  position: absolute;
+  width: 150px;
+  height: 113px;
+  top: 23px;
+  left: 23px;
+  object-fit: cover;
+}
+
+.want-cheese .text-wrapper {
+  position: absolute;
+  width: 295px;
+  height: 39px;
+  top: 60px;
+  left: 173px;
+  font-family: 'Irish Grover', Helvetica, sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.want-cheese .text-wrapper-2 {
+  position: absolute;
+  width: 139px;
+  height: 23px;
+  top: 68px;
+  left: 806px;
+  font-family: 'Irish Grover', Helvetica, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  font-size: 29px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.want-cheese .rectangle-8 {
+  position: absolute;
+  width: 100vw;
+  height: 160px;
+  top: 0;
+  left: 0;
+  background-color: #fcfaee;
+}
+
+.want-cheese .text-wrapper-3 {
+  position: absolute;
+  width: 288px;
+  height: 39px;
+  top: 60px;
+  left: 173px;
+  font-family: 'Irish Grover', Helvetica, sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 33px;
+  white-space: nowrap;
+}
+
+.want-cheese .text-wrapper-4 {
+  position: absolute;
+  height: 22px;
+  top: 70px;
+  left: 820px;
+  font-family: "Poppins-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 29px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.want-cheese .rectangle-9 {
+  position: absolute;
+  width: 210px;
+  height: 39px;
+  top: 61px;
+  left: 945px;
+  background-color: #d9d9d9b2;
+  border-radius: 10px;
+  opacity: 0.4;
+}
+
+.want-cheese .text-wrapper-5 {
+  position: absolute;
+  height: 22px;
+  top: 71px;
+  left: 959px;
+  font-family: "Poppins-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 29px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.want-cheese .text-wrapper-6 {
+  position: absolute;
+  height: 22px;
+  top: 72px;
+  left: 1187px;
+  font-family: "Poppins-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 29px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+
+/* what cheese */
+.what-cheese {
+  background-color: #ffeac5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.what-cheese .div {
+  background-color: #ffeac5;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+}
+
+.what-cheese .overlap {
+  position: absolute;
+  width: 1440px;
+  height: 160px;
+  top: 0;
+  left: 0;
+  background-color: #fcfaee;
+}
+
+.what-cheese .text-wrapper {
+  position: absolute;
+  width: 288px;
+  height: 39px;
+  top: 60px;
+  left: 173px;
+  font-family: "Irish Grover-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 33px;
+  white-space: nowrap;
+}
+
+.what-cheese .overlap-group {
+  position: absolute;
+  width: 210px;
+  height: 39px;
+  top: 61px;
+  left: 1177px;
+  border-radius: 10px;
+}
+
+.what-cheese .rectangle {
+  width: 210px;
+  height: 39px;
+  top: 0;
+  background-color: #d9d9d9b2;
+  border-radius: 10px;
+  opacity: 0.4;
+  position: absolute;
+  left: 0;
+}
+
+.what-cheese .text-wrapper-2 {
+  position: absolute;
+  height: 22px;
+  top: 11px;
+  left: 10px;
+  font-family: "Poppins-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 29px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.what-cheese .cheese-photoroom {
+  position: absolute;
+  width: 150px;
+  height: 113px;
+  top: 23px;
+  left: 23px;
+  object-fit: cover;
+}
+
+.what-cheese .text-wrapper-3 {
+  position: absolute;
+  width: 139px;
+  height: 23px;
+  top: 68px;
+  left: 806px;
+  font-family: "Poppins-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 29px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.what-cheese .text-wrapper-4 {
+  position: absolute;
+  height: 22px;
+  top: 71px;
+  left: 959px;
+  font-family: "Poppins-Light", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 29px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.what-cheese .rectangle-2 {
+  width: 1440px;
+  height: 71px;
+  top: 953px;
+  background-color: #fcfaee;
+  position: absolute;
+  left: 0;
+}
+
+.what-cheese .select {
+  position: absolute;
+  width: 1355px;
+  height: 726px;
+  top: 194px;
+  left: 42px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.what-cheese .img {
+  position: absolute;
+  width: 673px;
+  height: 591px;
+  top: 20px;
+  left: 332px;
+  background-color: #eaeaea;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.what-cheese .gallery {
+  position: absolute;
+  width: 138px;
+  height: 130px;
+  top: 187px;
+  left: 268px;
+  object-fit: cover;
+}
+
+.what-cheese .upload-image-wrapper {
+  position: absolute;
+  width: 275px;
+  height: 52px;
+  top: 349px;
+  left: 199px;
+  background-color: #d8d2c2;
+  border-radius: 30px;
+  box-shadow: 0px 4px 10px #00000040;
+}
+
+.what-cheese .upload-image {
+  position: absolute;
+  top: 13px;
+  left: 70px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.what-cheese .overlap-2 {
+  position: absolute;
+  width: 213px;
+  height: 69px;
+  top: 631px;
+  left: 571px;
+  border-radius: 10px;
+}
+
+.what-cheese .search-button {
+  position: absolute;
+  width: 213px;
+  height: 69px;
+  top: 0;
+  left: 0;
+  background-color: #fd8b51;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px 3px #00000040;
+}
+
+.what-cheese .text-wrapper-5 {
+  position: absolute;
+  top: 14px;
+  left: 54px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* Style for dropdown button */
+.dropdown-button {
+  display: flex;
+  align-items:center ; /* จัดตำแหน่งลูกศรให้ตรงกลาง */
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  width: 200px;
+  text-align: left;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+/* Style for dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  max-height: 500px; /* จำกัดความสูง */
+  overflow-y: auto; /* เปิด scroll เมื่อมีเนื้อหามากเกินไป */
+  min-width: 200px;
+  z-index: 1;
+}
+.dropdown-content label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+}
+/* Show the dropdown content when clicking the button */
+.show {
+  display: block;
+}
+
+/* Style for the container holding the dropdown */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+/* Style for dropdown button */
+.dropdown-button {
+    padding: 10px 20px;
+    background-color: #e7e7e7;
+    border: 5px solid #ffffff;
+    cursor: pointer;
+    width: 200px;
+    text-align: left;
+    margin-bottom: 10px;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+/* Style for additional options (checkboxes) */
+.additional-options {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.additional-options label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.additional-options input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+/* Style for submit button */
+.submit-button {
+    padding: 10px 20px;
+    background-color: #CB6040;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.submit-button:hover {
+    background-color: #a65338;
+}
+.additional-options label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.additional-options input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+.submit-button:hover {
+  background-color: #a65338;
+}
+.arrow {
+  margin-left: 5px; /* ระยะห่างระหว่างข้อความและลูกศร */
+  transition: transform 0.2s ease; /* ทำให้ลูกศรมีการเคลื่อนไหว */
+}
+
+.dropdown-button.active .arrow {
+  transform: rotate(180deg); /* หมุนลูกศรเมื่อ dropdown เปิด */
+}
