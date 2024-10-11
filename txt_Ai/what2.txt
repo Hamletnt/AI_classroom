@@ -17,7 +17,7 @@
           <label class="text-wrapper">THIEN CHAROEN <br> CHEESE</label>
           <div class="overlap-group">
             <div class="rectangle"></div>
-            <div class="text-wrapper-2">What cheese</div>
+            <div class="text-wrapper-2" onclick="window.location.href='what.html';">What cheese</div>
           </div>
           <label class="text-wrapper-3" onclick="window.location.href='home.html';">Home</label>
           <label class="text-wrapper-4" onclick="window.location.href='want.html';">Want cheese</label>
@@ -28,27 +28,27 @@
           </div>
           <label class="text-wrapper-5">Name</label>
           <div class="name-frame">
-            <label for=""></label>
+            <label class="name">Name</label>
           </div>
 
           <div class="text-wrapper-6">Details</div>
           <div class="details-frame">
-            <label for=""></label>
+            <label class="Details">Details</label>
           </div>
                  
           <div class="text-wrapper-8">Component</div>
           <div class="component-frame">
-            <label for=""></label>
+            <label class="component">Component</label>
           </div>
 
           <div class="text-wrapper-7">Category</div>
           <div class="category-frame">
-            <label for=""></label>
+            <label class="category">Category</label>
           </div>
           
           <div class="text-wrapper-9">Menu</div>
           <div class="menu-frame">
-            <label for=""></label>
+            <label class="menu">Menu</label>
           </div>  
         </div>
       </div>
