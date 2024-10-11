@@ -769,6 +769,7 @@
   letter-spacing: 0;
   line-height: 22px;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .what-cheese2 .category-frame {
