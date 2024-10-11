@@ -824,8 +824,8 @@
 
 .what-cheese2 .menu-frame {
   position: absolute;
-  width: 1245px;
-  height: 287px;
+  width: 80vw;
+  height: 30vh;
   top: 413px;
   left: 46px;
   background-color: #d4d4d4;
@@ -962,4 +962,64 @@
   font-size: 24px;
   letter-spacing: 0;
   line-height: normal;
+}
+
+.what-cheese2 .name {
+  top: 2vh;
+  left: 2vw;
+  font-size: 16px;         /* ขนาดตัวอักษร */
+  color: #000000;          /* สีดำ */
+  opacity: 0.3;            /* ความโปร่งใสทำให้จาง */
+  position: absolute;      /* จัดตำแหน่งแบบ absolute */
+  top: 10px;
+  left: 10px;
+  font-style: italic;      /* ทำให้ตัวเอียง */
+}
+
+.what-cheese2 .Details {
+  top: 2vh;
+  left: 2vw;
+  font-size: 16px;         /* ขนาดตัวอักษร */
+  color: #000000;          /* สีดำ */
+  opacity: 0.3;            /* ความโปร่งใสทำให้จาง */
+  position: absolute;      /* จัดตำแหน่งแบบ absolute */
+  top: 10px;
+  left: 10px;
+  font-style: italic;      /* ทำให้ตัวเอียง */
+}
+
+.what-cheese2 .component {
+  top: 2vh;
+  left: 2vw;
+  font-size: 16px;         /* ขนาดตัวอักษร */
+  color: #000000;          /* สีดำ */
+  opacity: 0.3;            /* ความโปร่งใสทำให้จาง */
+  position: absolute;      /* จัดตำแหน่งแบบ absolute */
+  top: 10px;
+  left: 10px;
+  font-style: italic;      /* ทำให้ตัวเอียง */
+}
+
+.what-cheese2 .category {
+  top: 2vh;
+  left: 2vw;
+  font-size: 16px;         /* ขนาดตัวอักษร */
+  color: #000000;          /* สีดำ */
+  opacity: 0.3;            /* ความโปร่งใสทำให้จาง */
+  position: absolute;      /* จัดตำแหน่งแบบ absolute */
+  top: 10px;
+  left: 10px;
+  font-style: italic;      /* ทำให้ตัวเอียง */
+}
+
+.what-cheese2 .menu {
+  top: 2vh;
+  left: 2vw;
+  font-size: 16px;         /* ขนาดตัวอักษร */
+  color: #000000;          /* สีดำ */
+  opacity: 0.3;            /* ความโปร่งใสทำให้จาง */
+  position: absolute;      /* จัดตำแหน่งแบบ absolute */
+  top: 10px;
+  left: 10px;
+  font-style: italic;      /* ทำให้ตัวเอียง */
 }
