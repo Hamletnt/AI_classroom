@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <title>Project AI</title>
+    <script src="what.js" defer></script> <!-- ใช้ defer เพื่อให้แน่ใจว่า DOM โหลดก่อน -->
+  </head>
+  <body>
+    <div class="what-cheese">
+      <div class="div">
+        <div class="overlap">
+          <img class="cheese-photoroom" src="img/cheese-photoroom.png" />
+          <label class="text-wrapper">THIEN CHAROEN <br> CHEESE</label>
+          
+          <div class="text-wrapper-group">
+            <div class="rectangle"></div>
+            <label class="text-wrapper-2"onclick="window.location.href='what.html';">What cheese</label>
+            <label class="text-wrapper-3" onclick="window.location.href='home.html';">Home</label>
+            <label class="text-wrapper-4" onclick="window.location.href='want.html';">Want cheese</label>
+          </div>
+          
+        </div>
+        
+
+         <!-- <div class="rectangle-2"></div> -->
+         <!-- <div class="select"></div> -->
+        <div class="img" id="galleryImage">
+          <div class="box">  
+            <img class="gallery" id="currentImage" src="img/gallery.png" />
+          </div>
+
+           <!-- <img class="gallery" id="currentImage" src="img/gallery.png" />  -->
+          
+            <!-- ปุ่มเลื่อนซ้าย -->
+            <!-- <button id="prevButton" class="arrow-btn">←</button> -->
+          <img class="arrow-btn" src="img/left-arrow.png" id="prevButton">
+    
+            <!-- ปุ่มเลื่อนขวา -->
+            <!-- <button id="nextButton" class="arrow-btn">→</button> -->
+          <img class="arrow-btn" src="img/right-arrow.png" id="nextButton">
+
+          <button class="overlap-2" onclick="window.location.href='what2.html';">
+            <div class="search-button"></div>
+            <div class="text-wrapper-5" >Search</div>
+          </button> 
+    
+            <!-- ปุ่มอัปโหลดรูปภาพ -->
+          <button class="upload-image-wrapper" id="uploadButton">
+            <label class="upload-image" >Upload image</label>
+            <input type="file" id="fileInput" style="display: none;" accept="image/*" multiple />
+          </button>
+        </div>
+         
+      </div>
+    </div>
+  </body>
+</html>
