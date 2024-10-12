@@ -155,7 +155,7 @@ body {
     cursor: pointer;
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 1030px ) {
 
     .container {
         flex-direction: column;
@@ -179,6 +179,7 @@ body {
 
     .img {
         width: 50%;
+        height: auto;
     }
 
     .arrow-btn {
@@ -191,6 +192,55 @@ body {
 
     .select {
         width: auto;
+        height: auto;
+    }
+
+    .text-wrapper-5, .text-wrapper-6, .text-wrapper-7, .text-wrapper-8, .text-wrapper-9 {
+        font-size: 15px;
+    }
+
+    .name-frame, .details-frame, .component-frame, .category-frame, .menu-frame {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-height: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: 80%;
+    }
+
+    .tap-menu {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .text-wrapper, .text-wrapper-2, .text-wrapper-3 {
+        font-size: 24px;
+    }
+
+    .text-wrapper-2 {
+        margin: 10px 0; 
+    }
+
+    .img {
+        width: 50%;
+        height: auto;
+    }
+
+    .arrow-btn {
+        width: 20px;
+    }
+
+    .gallery {
+        width: 80%;
+    }
+
+    .select {
+        width: auto;
+        height: auto;
     }
 
     .text-wrapper-5, .text-wrapper-6, .text-wrapper-7, .text-wrapper-8, .text-wrapper-9 {
