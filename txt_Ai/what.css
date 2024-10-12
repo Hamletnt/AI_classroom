@@ -178,7 +178,7 @@ body {
     }
 
     .upload-image-wrapper, .overlap-2, .img {
-        max-width: 90%;
+        max-width: 50%;
         margin: 10px;
     }
 }
