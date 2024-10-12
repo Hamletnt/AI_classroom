@@ -10,71 +10,72 @@ const dropdownData = {
   color: ['yellow', 'ivory', 'white', 'pale yellow', 'blue', 'orange', 'cream', 'brown', 'green', 'golden yellow', 'pale white', 'straw', 'brownish yellow', 'blue-grey', 'golden orange', 'red', 'pink and white']
 };
 
+
 // ฟังก์ชันสร้าง dropdowns
 function createDropdowns(containerId) {
-  const container = document.getElementById(containerId);
+const container = document.getElementById(containerId);
 
-  Object.keys(dropdownData).forEach(category => {
-    const dropdownButton = document.createElement('button');
-    dropdownButton.className = 'dropdown-button';
-    dropdownButton.id = `dropdownButton${category}`;
-    dropdownButton.innerHTML = `Select ${category} <span class="arrow">&#9660;</span>`;
+Object.keys(dropdownData).forEach(category => {
+  const dropdownButton = document.createElement('button');
+  dropdownButton.className = 'dropdown-button';
+  dropdownButton.id = `dropdownButton${category}`;
+  dropdownButton.innerHTML = `Select ${category} <span class="arrow">&#9660;</span>`;
 
-    const dropdownList = document.createElement('div');
-    dropdownList.className = 'dropdown-content';
-    dropdownList.id = `dropdownList${category}`;
+  const dropdownList = document.createElement('div');
+  dropdownList.className = 'dropdown-content';
+  dropdownList.id = `dropdownList${category}`;
 
-    dropdownData[category].forEach(item => {
-      const label = document.createElement('label');
-      label.innerHTML = `<input type="checkbox" value="${item}"> ${item}`;
-      dropdownList.appendChild(label);
-    });
-
-    const dropdownContainer = document.createElement('div');
-    dropdownContainer.className = 'dropdown-container';
-    dropdownContainer.appendChild(dropdownButton);
-    dropdownContainer.appendChild(dropdownList);
-    container.appendChild(dropdownContainer);
-
-    setupDropdown(dropdownButton, dropdownList, category);
+  dropdownData[category].forEach(item => {
+    const label = document.createElement('label');
+    label.innerHTML = `<input type="checkbox" value="${item}"> ${item}`;
+    dropdownList.appendChild(label);
   });
+
+  const dropdownContainer = document.createElement('div');
+  dropdownContainer.className = 'dropdown-container';
+  dropdownContainer.appendChild(dropdownButton);
+  dropdownContainer.appendChild(dropdownList);
+  container.appendChild(dropdownContainer);
+
+  setupDropdown(dropdownButton, dropdownList, category);
+});
 }
 
 // ฟังก์ชันจัดการ dropdown
 function setupDropdown(dropdownButton, dropdownList, category) {
-  dropdownButton.addEventListener('click', () => {
-    dropdownList.classList.toggle('show');
-    dropdownButton.classList.toggle('active');
-  });
+dropdownButton.addEventListener('click', () => {
+  dropdownList.classList.toggle('show');
+  dropdownButton.classList.toggle('active');
+});
 
-  const checkboxes = dropdownList.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-      const selected = Array.from(checkboxes)
-        .filter(checkbox => checkbox.checked)
-        .map(checkbox => checkbox.value);
+const checkboxes = dropdownList.querySelectorAll('input[type="checkbox"]');
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', () => {
+    const selected = Array.from(checkboxes)
+      .filter(checkbox => checkbox.checked)
+      .map(checkbox => checkbox.value);
 
-      dropdownButton.textContent = selected.length ? selected.join(', ') : `Select ${category}`;
-    });
+    dropdownButton.textContent = selected.length ? selected.join(', ') : `Select ${category}`;
   });
+});
 
-  window.addEventListener('click', (e) => {
-    if (!dropdownButton.contains(e.target) && !dropdownList.contains(e.target)) {
-      dropdownList.classList.remove('show');
-      dropdownButton.classList.remove('active');
-    }
-  });
+window.addEventListener('click', (e) => {
+  if (!dropdownButton.contains(e.target) && !dropdownList.contains(e.target)) {
+    dropdownList.classList.remove('show');
+    dropdownButton.classList.remove('active');
+  }
+});
 }
 
 // ฟังก์ชันส่งข้อมูลไปยัง API
 function sendDataToAPI(data) {
-  fetch('/predict', { // เปลี่ยน URL เป็น /predict ตาม API ของคุณ
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ features: data }), // ส่งข้อมูลฟีเจอร์ไปยังโมเดล
-  })
+fetch('/predict', { // เปลี่ยน URL เป็น /predict ตาม API ของคุณ
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ features: data }), // ส่งข้อมูลฟีเจอร์ไปยังโมเดล
+})
   .then(response => response.json())
   .then(data => {
     console.log('Success:', data);
@@ -90,49 +91,71 @@ function sendDataToAPI(data) {
 
 // ฟังก์ชันรวบรวมข้อมูลและส่งเมื่อกดปุ่มยืนยัน
 document.addEventListener('DOMContentLoaded', () => {
-  const submitButton = document.getElementById('submitButton');
-  submitButton.addEventListener('click', () => {
-    const result = {};
+const submitButton = document.getElementById('submitButton');
+submitButton.addEventListener('click', () => {
+  const result = {};
 
-    // รวบรวมข้อมูลจาก dropdowns
-    Object.keys(dropdownData).forEach(category => {
-      const dropdownList = document.getElementById(`dropdownList${category}`);
-      const checkboxes = dropdownList.querySelectorAll('input[type="checkbox"]');
-      const selected = Array.from(checkboxes)
-        .filter(checkbox => checkbox.checked)
-        .map(checkbox => checkbox.value);
-      result[category] = selected;
-    });
-
-    // รวบรวมข้อมูลจาก checkbox vegetarian และ vegan
-    const vegetarian = document.getElementById('vegetarian').checked;
-    const vegan = document.getElementById('vegan').checked;
-    result['diet'] = [];
-    if (vegetarian) result['diet'].push('vegetarian');
-    if (vegan) result['diet'].push('vegan');
-
-    // แสดงผลลัพธ์ใน console
-    console.log('Selected Options:', result);
-
-    // ส่งข้อมูลไปยัง API และแสดงผลใน rectangle-6
-    sendDataToAPI(result);
-
-    // รีเซ็ต dropdown และ checkbox
-    Object.keys(dropdownData).forEach(category => {
-      const dropdownButton = document.getElementById(`dropdownButton${category}`);
-      dropdownButton.textContent = `Select ${category}`;
-
-      const dropdownList = document.getElementById(`dropdownList${category}`);
-      const checkboxes = dropdownList.querySelectorAll('input[type="checkbox"]');
-      checkboxes.forEach(checkbox => {
-        checkbox.checked = false;
-      });
-    });
-    
-    // รีเซ็ต checkbox vegetarian และ vegan
-    document.getElementById('vegetarian').checked = false;
-    document.getElementById('vegan').checked = false;
+  // รวบรวมข้อมูลจาก dropdowns
+  Object.keys(dropdownData).forEach(category => {
+    const dropdownList = document.getElementById(`dropdownList${category}`);
+    const checkboxes = dropdownList.querySelectorAll('input[type="checkbox"]');
+    const selected = Array.from(checkboxes)
+      .filter(checkbox => checkbox.checked)
+      .map(checkbox => checkbox.value);
+    result[category] = selected;
   });
 
-  createDropdowns('dropdownContainer'); // เรียกฟังก์ชันสร้าง dropdowns
+  // รวบรวมข้อมูลจาก checkbox vegetarian และ vegan
+  const vegetarian = document.getElementById('vegetarian').checked;
+  const vegan = document.getElementById('vegan').checked;
+  result['diet'] = [];
+  if (vegetarian) result['diet'].push('vegetarian');
+  if (vegan) result['diet'].push('vegan');
+
+  // แสดงผลลัพธ์ใน console
+  console.log('Selected Options:', result);
+  // console.log(Object.values(result));
+  // ดึงเฉพาะค่า
+  const values = Object.values(result);
+
+  // แปลงค่าที่ได้เป็น JSON
+  const jsonValues = JSON.stringify(values);
+  const input = values.map(item => item.length === 0 ? null : item);
+  // สร้างอ็อบเจ็กต์ใหม่ที่มีคีย์เดียวคือ input
+  const resultObject = {
+    input: input
+  };
+
+  // แปลงอ็อบเจ็กต์เป็น JSON
+  const jsonResult = JSON.stringify(resultObject);
+
+  // แสดงผล JSON
+  console.log(jsonResult);
+
+  // แสดงผลลัพธ์
+  // console.log(input);
+  // แสดงผล JSON ที่มีแค่ค่า
+  // console.log(jsonValues);
+  // ส่งข้อมูลไปยัง API และแสดงผลใน rectangle-6
+  sendDataToAPI(result);
+
+  // รีเซ็ต dropdown และ checkbox
+  Object.keys(dropdownData).forEach(category => {
+    const dropdownButton = document.getElementById(`dropdownButton${category}`);
+    dropdownButton.textContent = `Select ${category}`;
+
+    const dropdownList = document.getElementById(`dropdownList${category}`);
+    const checkboxes = dropdownList.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      checkbox.checked = false;
+    });
+  });
+
+  document.getElementById('vegetarian').checked = false;
+  document.getElementById('vegan').checked = false;
 });
+});
+
+// เรียกใช้งานฟังก์ชันสร้าง dropdowns
+createDropdowns('dropdowns-container');
+
