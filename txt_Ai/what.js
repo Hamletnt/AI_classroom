@@ -9,7 +9,7 @@ document.getElementById('uploadButton').addEventListener('click', function() {
 // เมื่อมีการเลือกไฟล์
 document.getElementById('fileInput').addEventListener('change', function(event) {
     const files = event.target.files;
-    
+
     if (files.length > 0) {
         images = []; // ล้างข้อมูลรูปเก่า
         for (let i = 0; i < files.length; i++) {
@@ -17,6 +17,10 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
             const reader = new FileReader();
             reader.onload = function(e) {
                 images.push(e.target.result); // เก็บ URL ของรูปที่อ่านแล้วใน array
+
+                // บันทึกภาพลงใน local storage
+                localStorage.setItem('uploadedImages', JSON.stringify(images));
+
                 if (images.length === 1) {
                     displayImage(0); // ถ้าอัปโหลดรูปแรกแสดงรูปแรกทันที
                 }
