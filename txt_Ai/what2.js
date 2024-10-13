@@ -32,3 +32,10 @@ function displayImage(index) {
     const currentImage = document.getElementById('currentImage');
     currentImage.src = images[index]; // เปลี่ยน src ของรูปที่แสดง
 }
+
+// ลบ localStorage เมื่อปิดหน้าเว็บ
+window.addEventListener('beforeunload', function() {
+    // รีเซ็ตค่า currentIndex หรือ ลบข้อมูลที่เกี่ยวข้อง
+    localStorage.removeItem('uploadedImages'); // ลบข้อมูลรูปภาพใน localStorage
+    currentIndex = 0; // รีเซ็ตค่า currentIndex
+});
