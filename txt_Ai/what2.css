@@ -241,10 +241,11 @@ body {
     .select {
         width: auto;
         height: auto;
+        overflow-y: auto;
     }
 
     .text-wrapper-5, .text-wrapper-6, .text-wrapper-7, .text-wrapper-8, .text-wrapper-9 {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .name-frame, .details-frame, .component-frame, .category-frame, .menu-frame {
@@ -253,16 +254,16 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-    .text-wrapper, .text-wrapper-2, .text-wrapper-3 {
+    /* .text-wrapper, .text-wrapper-2, .text-wrapper-3 {
         font-size: 10px;
-    }
+    } */
 
     .arrow-btn {
         width: 15px;
     }
 
-    .cheese-photoroom {
+    /* .cheese-photoroom {
         width: 30px;
         height: auto;
-    }
+    } */
 }
