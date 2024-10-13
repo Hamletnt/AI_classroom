@@ -1,8 +1,8 @@
-
 const dropdownData = {
   milk: ['cow', 'sheep', 'goat', 'buffalo', 'water buffalo', 'plant-based', 'yak', 'camel', 'moose', 'donkey'],
   country: ['Switzerland', 'France', 'England', 'Great Britain', 'United Kingdom', 'Czech Republic', 'United States', 'Italy', 'Cyprus', 'Egypt', 'Israel', 'Jordan', 'Lebanon', 'Middle East', 'Syria', 'Sweden', 'Canada', 'Spain', 'Netherlands', 'Scotland', 'New Zealand', 'Germany', 'Australia', 'Austria', 'Portugal', 'India', 'Mexico', 'Greece', 'Ireland', 'Armenia', 'Finland', 'Iceland', 'Hungary', 'Belgium', 'Denmark', 'Turkey', 'Wales', 'Norway', 'Poland', 'Slovakia', 'Romania', 'Mongolia', 'Brazil', 'Mauritania', 'Bulgaria', 'China', 'Nepal', 'Tibet', 'Mexico and Caribbean'],
   type: ['semi-soft', 'semi-hard', 'artisan', 'brined', 'soft', 'hard', 'soft-ripened', 'blue-veined', 'firm', 'smear-ripened', 'fresh soft', 'organic', 'semi-firm', 'processed', 'whey', 'fresh firm'],
+  fat_content : ['Low','Medium','High'],
   texture: ['buttery', 'creamy', 'dense', 'firm', 'elastic', 'smooth', 'open', 'soft', 'supple', 'crumbly', 'semi firm', 'springy', 'crystalline', 'flaky', 'spreadable', 'dry', 'fluffy', 'brittle', 'runny', 'compact', 'stringy', 'chalky', 'chewy', 'grainy', 'soft-ripened', 'close', 'gooey', 'oily', 'sticky'],
   rind: ['washed', 'natural', 'rindless', 'cloth wrapped', 'mold ripened', 'waxed', 'bloomy', 'artificial', 'plastic', 'ash coated', 'leaf wrapped', 'edible'],
   color: ['yellow', 'ivory', 'white', 'pale yellow', 'blue', 'orange', 'cream', 'brown', 'green', 'golden yellow', 'pale white', 'straw', 'brownish yellow', 'blue-grey', 'golden orange', 'red', 'pink and white'],
@@ -67,6 +67,7 @@ window.addEventListener('click', (e) => {
 });
 }
 
+
 // ฟังก์ชันสำหรับจัดรูปแบบข้อมูลก่อนส่งไปยัง API
 function formatData(data) {
   return Object.keys(data).map(key => {
@@ -77,7 +78,6 @@ function formatData(data) {
   });
 }
 
-// ฟังก์ชันส่งข้อมูลไปยัง API
 async function sendDataToAPI(data) {
   console.log(data);
 
@@ -86,16 +86,71 @@ async function sendDataToAPI(data) {
   };
   dataJson = JSON.stringify(jsonData, null, 2);
   console.log(dataJson);
-
-  // ทำการส่งข้อมูลไปยัง Flask API ที่ endpoint /predict
   try {
-    const response = await fetch('https://3.105.229.190:5000/predict', {
+    const response = await fetch('http://127.0.0.1:5000/predict', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'  // เพิ่ม Accept header เพื่อระบุว่าต้องการรับ JSON
+        'Accept': 'application/json',
       },
-      body: JSON.stringify(jsonData),  // ส่งข้อมูลฟีเจอร์ไปยังโมเดล
+      body: JSON.stringify(jsonData),
+    });
+
+    console.log("API Response Status:", response.status);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log("API Response Data:", result);
+
+    // ใช้ค่าจากอาเรย์ prediction
+    const predictionArray = result.prediction;
+
+    // ตรวจสอบว่า predictionArray มีข้อมูลอยู่ไหม
+    if (Array.isArray(predictionArray) && predictionArray.length > 0) {
+      const prediction = predictionArray[0].trim().toLowerCase(); // ใช้ค่าแรกในอาเรย์
+      console.log("Extracted Prediction:", prediction);
+    
+      const matchingRow = cheeseData.find(row => row.family.toLowerCase() === prediction.toLowerCase());
+    
+      // สร้างข้อความสำหรับแสดงผล
+      let displayText = `Prediction: ${predictionArray[0]}\n`;
+    
+      if (matchingRow) {
+        displayText += `อาหาร: ${matchingRow['อาหาร'] || 'N/A'}\n`;
+        displayText += `เครื่องดื่ม: ${matchingRow['เครื่องดื่ม'] || 'N/A'}\n`;
+        displayText += `รายละเอียด: ${matchingRow['รายละเอียด'] || 'N/A'}`;
+      } else {
+        displayText += 'No matching data found in Excel.';
+      }
+    
+      // แสดงผลลัพธ์ใน .rectangle-4
+      document.querySelector('.rectangle-4').textContent = displayText;
+    } else {
+      console.error("Prediction is empty or not an array.");
+      document.querySelector('.rectangle-4').textContent = 'No prediction data received.';
+    }
+    
+    await sendResultToAnotherAPI();
+
+  } catch (error) {
+    console.error("Error in API call:", error);
+    document.querySelector('.rectangle-4').textContent = 'Error occurred while fetching prediction.';
+  }
+}
+
+// ฟังก์ชันส่งข้อมูลไปยัง API ที่สอง
+async function sendResultToAnotherAPI() {
+  try {
+    // ทำการแทรกข้อมูลใหม่ลงในตำแหน่งที่ 2 ของ array (คุณอาจต้องการปรับให้ตรงกับโครงสร้างของข้อมูลที่ต้องการส่งไปยัง API)
+    const response = await fetch('http://127.0.0.1:5000/cheese', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
     });
 
     // ตรวจสอบสถานะการตอบสนอง
@@ -104,15 +159,42 @@ async function sendDataToAPI(data) {
     }
 
     const result = await response.json();
-    console.log('Success:', result);
-    
-    // นำผลลัพธ์จากการทำนายไปแสดงใน rectangle-6
-    document.querySelector('.rectangle-6').textContent = `Prediction: ${result.prediction}`;
+    document.querySelector('.rectangle-5').textContent = `Prediction_Cheese: ${result.data}`;
+
+    console.log('Data successfully sent to the second API:', result);
   } catch (error) {
-    console.error('Error:', error);
-    document.querySelector('.rectangle-6').textContent = 'Error occurred while fetching prediction.';
+    console.error('Error sending data to the second API:', error);
   }
 }
+
+
+// ฟังก์ชันสำหรับอ่านข้อมูลจากไฟล์ Excel
+async function loadExcelData(file) {
+  try {
+    const response = await fetch(file);
+    const arrayBuffer = await response.arrayBuffer();
+    const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+
+    // แปลงข้อมูล Excel เป็น JSON
+    const data = XLSX.utils.sheet_to_json(sheet);
+    console.log('Excel Data Loaded:', data);
+    return data;
+  } catch (error) {
+    console.error('Error loading Excel file:', error);
+    document.querySelector('.rectangle-4').textContent = 'Error loading Excel data.';
+    return [];
+  }
+}
+
+// โหลดข้อมูล Excel เมื่อหน้าเว็บพร้อม
+let cheeseData = [];
+document.addEventListener('DOMContentLoaded', async () => {
+  cheeseData = await loadExcelData('./cheesenemo.xlsx');
+
+});
 
 // ฟังก์ชันรวบรวมข้อมูลและส่งเมื่อกดปุ่มยืนยัน
 document.addEventListener('DOMContentLoaded', () => {
