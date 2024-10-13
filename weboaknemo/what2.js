@@ -23,21 +23,55 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         categoryLabel.innerText = 'Family : ไม่พบผลการพยากรณ์';
         confidenceLabel.innerText = 'Confidence : ไม่พบผลการพยากรณ์';
-    }
+    }    
 });
 
-
-// ฟังก์ชันสำหรับแสดงรูปภาพ
-function displayImage(index) {
-    const currentImage = document.getElementById('currentImage');
-    currentImage.src = images[index]; // เปลี่ยน src ของรูปที่แสดง
+async function fetchDetailsFromGoogleSheets(predictedCategory) {
+    const sheetId = '1WEH5IBw-FJRdMZRFtl695eLVu46SpvGtW4ZEw3mN_3c'; // Google Sheets ID
+    const sheetRange = 'Sheet1'; // ชื่อชีต
+    const apiKey = 'AIzaSyAEhw01BV1z5jIell5tAVVhOBLgsPlCTFw'; // API Key
     
-    // แสดง URL ของรูปภาพใน console
-    console.log("กำลังแสดงรูปภาพ:", images[index]);
+    try {
+        const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${sheetRange}?key=${apiKey}`);
+        const data = await response.json();
+        console.log('Data from Google Sheets:', data); // ตรวจสอบข้อมูลที่ได้จาก Google Sheets
+        
+        const rows = data.values;
 
-    // สร้างองค์ประกอบ img เพื่อแสดงใน console (อาจไม่แสดงในบางเบราว์เซอร์)
-    console.log('%c ', `font-size: 100px; background: url(${images[index]}) no-repeat; background-size: contain;`);
+        // ค้นหาแถวที่ตรงกับประเภทที่พยากรณ์ไว้
+        let selectedRow;
+        for (const row of rows) {
+            if (row[0] === predictedCategory) { // ค้นหาตรงกับหมวดหมู่ที่พยากรณ์ไว้
+                selectedRow = row;
+                break;
+            }
+        }
+
+        if (selectedRow) {
+            // แสดงข้อมูลในหน้าเว็บ
+            console.log('Selected row:', selectedRow); // ตรวจสอบข้อมูลของแถวที่เลือก
+            document.getElementById('details-frame').innerText = selectedRow[1]; // ดึงข้อมูลรายละเอียด
+            document.getElementById('menu-frame').innerText = selectedRow[2]; // ดึงข้อมูลเมนู
+            document.getElementById('drink-frame').innerText = selectedRow[3]; // ดึงข้อมูลเครื่องดื่ม
+        } else {
+            console.error('ไม่พบข้อมูลที่ตรงกับผลการพยากรณ์.');
+        }
+    } catch (error) {
+        console.error('เกิดข้อผิดพลาดในการดึงข้อมูลจาก Google Sheets:', error);
+    }
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const predictionResult = JSON.parse(localStorage.getItem('predictionResult'));
+    
+    if (predictionResult && !isNaN(predictionResult.Confidence)) {
+        const predictedCategory = predictionResult.Predicted; // หมวดหมู่ที่พยากรณ์ได้
+
+        // เรียกฟังก์ชันดึงข้อมูลจาก Google Sheets
+        fetchDetailsFromGoogleSheets(predictedCategory);
+    }
+});
 
 // ลบ localStorage เมื่อปิดหน้าเว็บ
 window.addEventListener('beforeunload', function() {
