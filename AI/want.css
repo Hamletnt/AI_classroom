@@ -66,15 +66,17 @@
 }
 
   
-  .want-cheese .frame {
-    position: relative;
-    width: 100%;
-    height: 200%;
-    top: 5vh;
-    overflow: hidden;
-    overflow-y: scroll;
-    border-radius: 20px;
-  }
+.want-cheese .frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 5vh;
+  overflow: hidden;
+  border-radius: 20px;
+  display: flex; /* ใช้ Flexbox เพื่อจัดเรียงในแนวนอน */
+  justify-content: space-between; /* จัดเรียงช่องว่างระหว่าง rectangle */
+  overflow-y: scroll;
+}
   
   .want-cheese .overlap-group {
     position: relative;
@@ -112,35 +114,43 @@
     background-color: #d3c0a63b;
   } */
   
- /* rectangle-4 */
+  /* rectangle-4 */
 .want-cheese .rectangle-4 {
   position: absolute;
-  width: 45%; /* ลดขนาดลง */
-  height: 15%; /* ลดขนาดลง */
+  width: 47%; /* ลดขนาดลง */
+  height: 90%; /* ลดขนาดลง */
   top: 2%; /* ขยับลงจากขอบ frame */
-  left: 5%; /* ระยะห่างจากขอบซ้าย */
+  left: 2%; /* ระยะห่างจากขอบซ้าย */
   background-color: #d3c0a63b;
+  white-space: pre-line; /* ทำให้บรรทัดใหม่แสดงได้ */
+  font-family: Arial, sans-serif; /* เปลี่ยนฟอนต์ตามที่ต้องการ */
+  padding: 10px; /* กำหนดการเว้นระยะ */
+  font-size: 20px;
 }
 
-/* rectangle-5 */
+ /* rectangle-5 */
 .want-cheese .rectangle-5 {
   position: absolute;
-  width: 45%; /* ลดขนาดลง */
-  height: 15%; /* ลดขนาดลง */
-  top: 20%; /* เลื่อนลงมาจาก rectangle-4 */
-  left: 5%; /* ระยะห่างจากขอบซ้ายเท่ากัน */
+  width: 47%; 
+  height: 90%; 
+  top: 2%;
+  left: 50%; 
   background-color: #d3c0a63b;
+  white-space: pre-line; /* ทำให้บรรทัดใหม่แสดงได้ */
+  font-family: Arial, sans-serif; /* เปลี่ยนฟอนต์ตามที่ต้องการ */
+  padding: 10px; /* กำหนดการเว้นระยะ */
+  font-size: 20px;
 }
 
 /* rectangle-6 */
-.want-cheese .rectangle-6 {
+/* .want-cheese .rectangle-6 {
   position: absolute;
-  width: 45%; /* ลดขนาดลง */
-  height: 15%; /* ลดขนาดลง */
-  top: 38%; /* เลื่อนลงมาจาก rectangle-5 */
-  left: 5%; /* ระยะห่างจากขอบซ้ายเท่ากัน */
+  width: 45%; 
+  height: 15%; 
+  top: 38%; 
+  left: 5%;
   background-color: #d3c0a63b;
-}
+} */ 
 
   .want-cheese .rectangle-7 {
     position: absolute;
@@ -384,6 +394,9 @@
     .want-cheese .text-wrapper-3 {
       font-size: 24px;
   }
+    .want-cheese.rectangle-4, .want-cheese.rectangle-5{
+    font-size: 10px;
+   }
 
     .want-cheese.frame {
       max-width: 100%;
