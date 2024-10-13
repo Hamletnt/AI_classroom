@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function displayImage(index) {
     const currentImage = document.getElementById('currentImage');
     currentImage.src = images[index]; // เปลี่ยน src ของรูปที่แสดง
+    
+    // แสดง URL ของรูปภาพใน console
+    console.log("กำลังแสดงรูปภาพ:", images[index]);
+
+    // สร้างองค์ประกอบ img เพื่อแสดงใน console (อาจไม่แสดงในบางเบราว์เซอร์)
+    console.log('%c ', `font-size: 100px; background: url(${images[index]}) no-repeat; background-size: contain;`);
 }
 
 // ลบ localStorage เมื่อปิดหน้าเว็บ
