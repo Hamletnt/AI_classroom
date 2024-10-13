@@ -25,22 +25,24 @@
               <label class="text-wrapper-3" onclick="window.location.href='what.html';">What cheese</label>
             </nav>
           </div>
-          <div class="img" id="galleryImage">
-            <div class="box">
-              <img class="gallery" id="currentImage" src="img/gallery.png" alt="Gallery Image" />
+          <div class="select">
+            <div class="img" id="galleryImage">
+              <div class="box">
+                <img class="gallery" id="currentImage" src="img/gallery.png" alt="Gallery Image" />
+              </div>
+              <img class="arrow-btn" src="img/left-arrow.png" id="prevButton" alt="Previous" />
+              <img class="arrow-btn" src="img/right-arrow.png" id="nextButton" alt="Next" />  
             </div>
-            <img class="arrow-btn" src="img/left-arrow.png" id="prevButton" alt="Previous" />
-            <img class="arrow-btn" src="img/right-arrow.png" id="nextButton" alt="Next" />  
-          </div>
-          <div class="actions"> <!-- กลุ่มใหม่สำหรับการจัดเรียง -->
-            <div class="upload-image-wrapper" id="uploadButton">
-                <label class="upload-image">Upload image</label>
-                <input type="file" id="fileInput" style="display: none;" accept="image/*" multiple />
+            <div class="actions"> <!-- กลุ่มใหม่สำหรับการจัดเรียง -->
+              <div class="upload-image-wrapper" id="uploadButton">
+                  <label class="upload-image">Upload image</label>
+                  <input type="file" id="fileInput" style="display: none;" accept="image/*" multiple />
+              </div>
+              <button class="overlap-2" onclick="window.location.href='what2.html';">
+                  <div class="search-button"></div>
+                  <div class="text-search">Search</div>
+              </button>
             </div>
-            <button class="overlap-2" onclick="window.location.href='what2.html';">
-                <div class="search-button"></div>
-                <div class="text-search">Search</div>
-            </button>
           </div>
           <!-- <div class="select"></div> -->
         </div>
