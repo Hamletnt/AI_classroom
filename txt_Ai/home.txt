@@ -15,15 +15,17 @@
           <img class="cheese-photoroom" src="img/cheese-Photoroom.png" />
           <div class="text-wrapper-3">THIEN CHAROEN <br> CHEESE</div>
         </div>
-        <div class="overlap">
-          <button class="div-2" onclick="window.location.href='want.html';"></button>
-          <div class="text-wrapper">Want cheese</div>
-          <img class="wishlist" src="img/wishlist.png" onclick="window.location.href='want.html';" />
-        </div>
-        <div class="overlap-group">
-          <button class="div-2" onclick="window.location.href='what.html'"></button>
-          <div class="text-wrapper-2">What cheese</div>
-          <img class="think-question" src="img/think-question.png" onclick="window.location.href='what.html';"/>
+        <div class="select">
+          <div class="overlap">
+            <button class="div-2" onclick="window.location.href='want.html';"></button>
+            <div class="text-wrapper">Want cheese</div>
+            <img class="wishlist" src="img/wishlist.png" onclick="window.location.href='want.html';" />
+          </div>
+          <div class="overlap-group">
+            <button class="div-2" onclick="window.location.href='what.html'"></button>
+            <div class="text-wrapper-2">What cheese</div>
+            <img class="think-question" src="img/think-question.png" onclick="window.location.href='what.html';"/>
+          </div>
         </div>
       </div>
     </div>
