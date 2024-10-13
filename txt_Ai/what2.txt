@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400&display=swap" rel="stylesheet">
     <title>Project AI</title>
-    <script src="what.js" defer></script>
+    <script src="what2.js" defer></script>
   </head>
   <body>
     <div class="what-cheese2">
