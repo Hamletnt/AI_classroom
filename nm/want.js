@@ -236,8 +236,9 @@ submitButton.addEventListener('click', () => {
   const vegan = document.getElementById('vegan').checked;
   result['vegetarian'] = [];
   result['vegan'] = [];
-  if (vegetarian) result['vegetarian'].push('TRUE');
-  if (vegan) result['vegan'].push('TRUE');
+  // ใช้ if-else ในการตั้งค่าค่าของ vegetarian และ vegan
+  result['vegetarian'] = vegetarian ? 'TRUE' : 'FALSE';
+  result['vegan'] = vegan ? 'TRUE' : 'FALSE';
 
   // แสดงผลลัพธ์ใน console
   console.log('Selected Options:', result);
