@@ -40,6 +40,24 @@ body {
     border-radius: 20px;
 }
 
+.tap-menu {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.icon {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: auto;
+    align-items: center;
+}
+
 .select {
     display: flex;
     flex-direction: column; /* จัดเรียงในแนวตั้ง */
@@ -58,23 +76,9 @@ body {
     align-items: center; /* จัดให้อยู่ตรงกลางในแนวตั้ง */
 }
 
-.tap-menu {
-    width: 50vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-left: auto;
-}
 
-.icon {
-    width: 50vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-left: auto;
-    align-items: center;
-}
+
+
 
 .text-wrapper, .text-wrapper-2, .text-wrapper-3 {
     font-size: 36px;
@@ -97,7 +101,6 @@ body {
 
 .text-wrapper-2:hover, .text-wrapper-3:hover {
     color: #ffffff;
-    background-color: #979797;
 }
 
 .overlap {
@@ -214,6 +217,13 @@ body {
         max-width: 50%;
         margin: 10px;
     }
+
+    /* .select {
+        height: 60%;
+        width: 100%;
+        overflow-y: auto;
+        flex-direction: column;
+    } */
 }
 
 .actions {
@@ -228,16 +238,26 @@ body {
 
 @media screen and (max-height: 900px) {
     .select {
-      height: 70%;
+      height: 50%;
       width: 100%;
       overflow-y: auto;
       flex-direction: column;
     }
+    
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 835px) {
     .select {
         height: 60%;
+        width: 100%;
+        overflow-y: auto;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .select {
+        height: 40%;
         width: 100%;
         overflow-y: auto;
         flex-direction: column;
