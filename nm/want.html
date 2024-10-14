@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="want.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <!-- อย่าลืมเพิ่ม Library xlsx -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <title>Project AI</title>
+</head>
+    <body>
+        <div class="want-cheese">
+            
+            <div class="div">
+
+                <div class ="container">
+                    <div class = "icon">
+                        <img class="cheese-photoroom" src="img/cheese-Photoroom.png" alt="Cheese Photo Room"/>
+                        <div class="text-wrapper-3">THIEN CHAROEN<br> CHEESE</div>
+                    </div>    
+
+                    <nav class="tap-menu">
+                        <label class="text-wrapper-8" onclick="window.location.href='home.html';">Home</label>
+                        <label class="text-wrapper-9" onclick="window.location.href='want.html';">Want cheese</label>
+                        <label class="text-wrapper-10" onclick="window.location.href='what.html';">What cheese</label>
+                      </nav>
+                </div>        
+                <div class="select">
+                   
+                    <!-- Container for all dropdowns -->
+                    <div id="dropdowns-container"></div>
+                    
+                    <div class="dropdown-content">
+                    <!-- ตัวเลือกใน dropdown -->
+                    <label><input type="checkbox" value="Option 1"> Option 1</label>
+                    <label><input type="checkbox" value="Option 2"> Option 2</label>
+                    <label><input type="checkbox" value="Option 3"> Option 3</label>
+                    </div>
+                    <!-- Checkbox for Vegetarian and Vegan -->
+                    <div class="additional-options">
+                        <label>
+                            <input type="checkbox" id="vegetarian" name="diet" value="vegetarian">
+                            Vegetarian
+                        </label>
+                        <label>
+                            <input type="checkbox" id="vegan" name="diet" value="vegan">
+                            Vegan
+                        </label>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button id="submitButton" class="submit-button">ยืนยัน</button>
+
+                    <!-- Div for displaying selected data -->
+                    <div id="result-container"></div> <!-- เพิ่ม div สำหรับแสดงผลข้อมูลที่ถูกเลือก -->
+                    
+                    <!-- JavaScript file -->
+                    <script src="want.js"></script>
+                    
+                    <div class="frame">
+                        <div class="overlap-group">
+                            <!-- <div class="rectangle"></div>
+                            <div class="rectangle-2"></div>
+                            <div class="rectangle-3"></div> -->
+                            <div class="rectangle-4"></div>
+                            <div class="rectangle-5"></div>
+                                <!-- <label class="photo" src="img/black.png"></label> -->
+                            </div>
+                            <!-- <div class="rectangle-6"></div> -->
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+           
+        </div>
+    </body>
+</html>

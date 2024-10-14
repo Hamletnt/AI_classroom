@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="what2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>Project AI</title>
+    <script src="what2.js" defer></script>
+  </head>
+  <body>
+    <div class="what-cheese2">
+      <div class="container">
+        <div class="overlap">
+          <div class="icon">
+            <img class="cheese-photoroom" src="img/cheese-Photoroom.png" alt="Cheese Photo" />
+            <label class="text-wrapper">THIEN CHAROEN <br />CHEESE</label>
+          </div>
+          <nav class="tap-menu">
+            <label class="text-wrapper-2" onclick="window.location.href='home.html';">Home</label>
+            <label class="text-wrapper-2" onclick="window.location.href='want.html';">Want cheese</label>
+            <label class="text-wrapper-3" onclick="window.location.href='what.html';">What cheese</label>
+          </nav>
+        </div>
+
+        <div class="select">
+          <div class="check">
+            <div class="img" id="galleryImage">
+              <div class="box">
+                <img class="gallery" id="currentImage" src="img/gallery.png" alt="Gallery Image" />
+              </div>
+              <img class="arrow-btn" src="img/left-arrow.png" id="prevButton" alt="Previous" />
+              <img class="arrow-btn" src="img/right-arrow.png" id="nextButton" alt="Next" />  
+            </div>
+            <div class="output">
+              <label class="nemo" id="categoryLabel">Family : </label>
+              <label class="petch" id="confidenceLabel">Confidence : </label>
+            </div>
+          </div>
+
+          <!-- <label class="text-wrapper-5">Name</label>
+          <div class="name-frame">
+            <label class="name">Name</label>
+          </div> -->
+
+          <div class="text-wrapper-6">Details</div>
+          <div class="details-frame" >
+            <label class="Details" id="details-frame">Details</label>
+          </div>
+
+          <div class="text-wrapper-9">Menu</div>
+          <div class="menu-frame">
+            <label class="menu" id="menu-frame">Menu</label>
+          </div>  
+
+          <div class="text-wrapper-10">Drink</div>
+          <div class="drink-frame">
+            <label class="drink" id="drink-frame">Drink</label>
+          </div> 
+          
+        </div> 
+      </div>
+    </div>
+  </body>
+</html>
